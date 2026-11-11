@@ -4,7 +4,7 @@ from Layer.BaseLayer import Layer
 
 class DenseLayer(Layer):
     def __init__(self, input_size, output_size):
-        self.weights = np.random.randn(output_size, input_size) * 0.01  # W(m,n) matrix initialized with small random values
+        self.weights = np.random.randn(output_size, input_size) * np.sqrt(1 / input_size)  # W(m,n) matrix initialized with small random values
         self.biases = np.zeros((output_size, 1))  # B (m,1) bias vector instantiated with zeros
 
     def forward(self, inputs):

@@ -21,7 +21,9 @@ np.random.seed(0)
 network = [
     DenseLayer(2, 3),
     Sigmoid(),
-    DenseLayer(3, 1),
+    DenseLayer(3, 2),
+    Sigmoid(),
+    DenseLayer(2,1),
     Sigmoid()
 ]
 
@@ -35,7 +37,7 @@ history = train(
     x_train=X,
     y_train=Y,
     epochs=20000,
-    learning_rate=0.1,
+    learning_rate=1,
     verbose=True,
     plot=True
 )
