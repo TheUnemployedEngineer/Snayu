@@ -5,7 +5,7 @@
 
 
 <p align="center">
-  <a href="https://www.youtube.com/playlist?list=PLCqb7LcK1izU">
+  <a href="[https://www.youtube.com/@TheUnemployedEng]">
     <img src="https://img.shields.io/badge/YouTube-Watch%20the%20Video%20Series-red?logo=youtube&logoColor=white" alt="Watch the Snayu video series on YouTube">
   </a>
 </p>
