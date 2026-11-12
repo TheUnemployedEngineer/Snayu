@@ -34,7 +34,7 @@
 
 ## 📺 Video series
 
-Prefer to learn by watching? The [Snayu video series on YouTube](https://www.youtube.com/playlist?list=PLCqb7LcK1izU) walks through this project, so you can follow along with the code in this repo.
+Prefer to learn by watching? The [Snayu video series on YouTube](https://www.youtube.com/@TheUnemployedEng) walks through this project, so you can follow along with the code in this repo.
 
 ---
 
