@@ -6,18 +6,18 @@ import os
 import sys
 
 
-def _is_correct(y, out):
-    y = np.asarray(y).ravel()
-    out = np.asarray(out).ravel()
+def _is_correct(y_true, y_pred):
+    y_true = np.asarray(y_true).ravel()
+    y_pred = np.asarray(y_pred).ravel()
 
-    if len(out) > 1:
+    if len(y_pred) > 1:
         # multi class classification
-        pred = np.argmax(out)
-        true = np.argmax(y) if len(y) > 1 else y[0]
+        pred = np.argmax(y_pred)
+        true = np.argmax(y_true) if len(y_true) > 1 else y_true[0]
     else:
         # one output neuron: 0.5 or above means class 1
-        pred = 1 if out[0] >= 0.5 else 0
-        true = y[0]
+        pred = 1 if y_pred[0] >= 0.5 else 0
+        true = y_true[0]
 
     return pred == true
 

@@ -1,36 +1,28 @@
 from Layer.BaseLayer import Layer
-import numpy as np
-
 
 
 class LossLayer(Layer):
-    def __init__(self,loss_func,loss_func_prime):
-        self.loss=loss_func       # mse  function  not  varriable  
-        self.loss_prime=loss_func_prime #mse prime not varriable 
+    def __init__(self, loss_func, loss_func_prime):
+        self.loss = loss_func              # loss function (not a value)
+        self.loss_prime = loss_func_prime  # loss derivative function (not a value)
 
-        self.inputs=None
-        self.target=None
+        self.y_pred = None
+        self.y_true = None
 
-    
-    def forward(self,inputs,target):
+    def _validate(self, y_pred, y_true, method):
+        if y_true is None:
+            raise ValueError(f"LossLayer.{method}() requires a target value.")
+        if y_pred is None:
+            raise ValueError(f"LossLayer.{method}() requires predicted values.")
 
-        if target is None: raise ValueError("LossLayer.forward() requires a target value.")
-        if inputs is None : raise ValueError("LossLayer.forward() requires input values ")
+    def forward(self, y_pred, y_true):
+        self._validate(y_pred, y_true, "forward")
+        self.y_pred = y_pred
+        self.y_true = y_true
+        return self.loss(self.y_true, self.y_pred)        # loss value
 
-        self.inputs=inputs
-        self.target=target
-
-        return self.loss(self.target,self.inputs)   # calculating loss 
-
-    
-    def backward(self,inputs,target):
-        if target is None: raise ValueError("LossLayer.forward() requires a target value.")
-        if inputs is None : raise ValueError("LossLayer.forward() requires input values ")
-
-        self.inputs=inputs
-        self.target=target
-
-        return self.loss_prime(self.target,self.inputs)   # calculating  dL/dY 
-
-
-        
+    def backward(self, y_pred, y_true):
+        self._validate(y_pred, y_true, "backward")
+        self.y_pred = y_pred
+        self.y_true = y_true
+        return self.loss_prime(self.y_true, self.y_pred)  # dL/dY
