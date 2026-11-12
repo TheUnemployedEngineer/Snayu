@@ -1,0 +1,22 @@
+A few weeks ago I realized something a little embarrassing.
+
+I'd used neural networks plenty of times, but I couldn't really explain what was happening inside one. I just called model.fit() and hoped for the best.
+
+So I decided to build one from scratch. No PyTorch, no TensorFlow, just NumPy and a lot of trial and error.
+
+I called it Snayu (স্নায়ু). It's Bengali for "nerve."
+
+I wrote every forward pass, every gradient and every weight update by hand. Honestly, the first time XOR finally trained correctly, I stared at the screen like I'd discovered fire.
+
+The part I'm proudest of is the last demo. I trained a small network to learn a bumpy 3D surface, and recorded it as it learned. It begins as a shapeless blob and slowly turns into a near-perfect copy of the target. It's so satisfying to watch (GIF below 👇).
+
+I also recorded a video series about the whole project, in case you'd like to follow along or build your own:
+🎥 https://www.youtube.com/playlist?list=PLCqb7LcK1izU
+
+Code is here if you want to poke around or break it: <ADD YOUR GITHUB REPO LINK>
+
+The biggest thing I took away: you don't really understand backpropagation until you've debugged it yourself at 1 a.m.
+
+If you're learning deep learning, I'd love to hear how you're doing it. And what should I build next: mini-batches, Adam, or convolution layers?
+
+#MachineLearning #DeepLearning #Python #NumPy #LearningInPublic #OpenSource
