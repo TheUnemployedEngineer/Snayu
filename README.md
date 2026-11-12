@@ -45,7 +45,7 @@ Prefer to learn by watching? The [Snayu video series on YouTube](https://www.you
 You need Python 3.9+ (the project was built on 3.11).
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/TheUnemployedEngineer/Snayu.git
 cd Snayu
 
 python -m venv .env
