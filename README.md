@@ -76,7 +76,7 @@ input: [1, 0] -> pred: 1 (0.9xxx) | target: 1
 input: [1, 1] -> pred: 0 (0.0xxx) | target: 0
 ```
 
-> 💡 **If it gets stuck:** weights start random, and XOR with sigmoid occasionally lands in a flat spot, with every prediction near `0.5`. Just run it again. In practice, this is the kind of thing worth experimenting with (try `Tanh`, more neurons, or a different seed).
+
 
 ---
 
